@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<% include partials/header %>
+    <body>
+        <div class="container">
+             <div class="jumbotron" id="loggedInDisplay">
+                 <h1 class="display-3" id=loggedInTitle> <%= title %> </h1>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="loginForm">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="username" placeholder="Start chatting as...">
+                              <span class="input-group-btn">
+                                <button class="btn btn-info" type="submit" id="loginButton">Connect!</button>
+                              </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Online Users
+                            </h3>
+                        </div>
+                        <ul class="list-group" id="users">
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8" id="messageGroup">
+                    <div class="chat" id="chat">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title" id="chatTitle">
+
+                                </h3>
+                            </div>
+                            <ul class="list-group" id="chatMessages">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <form id="messageForm">
+                        <div class="form-group" id="messageDiv">
+                            <textarea class="form-control" id="message" placeholder="Send new message..."></textarea>
+                            <input type="submit" class="btn btn-primary" value="Send Message" id="messageButton">
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-md-6">
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                              <input type="text" class="form-control" aria-describedby="basic-addon2" id="timeout" value=60>
+                              <span class="input-group-addon" id="basic-addon2">seconds timeout</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="alertPanel">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="modalLabel"></h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+        			        <div class="col-sm-12">
+                		        <label> From: <span id="modalFromUser" ></span></label>
+        	      	       </div>
+        		       </div>
+
+                 <div class="row">
+                     <div class="col-sm-12">
+                         <label>Text: <span id="modalText" ></span></label>
+                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label>Expires: <span id="modalExpireDate" ></span></label>
+                    </div>
+                </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

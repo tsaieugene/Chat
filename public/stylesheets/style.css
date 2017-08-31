@@ -1,0 +1,22 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+/* header for page */
+.jumbotron {
+    text-align: center;
+}
+/* Container for chat, message form, and timeout field */
+#messageGroup {
+    display: none;
+}
+/* Container for new message textarea and button */
+#messageDiv {
+    position: relative;
+}
+/* Send new message form */
+#messageButton {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
