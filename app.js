@@ -58,7 +58,7 @@ io.on('connection', function(socket){
     // Selected user conversation (limited to 20 messages)
     socket.on('selected user', function(data, callback) {
         Chat.find({'toUser': data.toUser, 'fromUser': data.fromUser, 'expireAt': { $gt: new Date() }})
-            .sort("-createdAt")
+            .sort("-expireAt")
             .limit(20)
             .exec(function (err, docs) {
             if (err) {
