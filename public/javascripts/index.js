@@ -1,5 +1,7 @@
 "use strict"
 $(document).ready(function() {
+    // load socket client, which exposes a global io and then connects
+    // do not need to specify any URL when calling io() since it defaults to trying to connect to the host that serves the page
     var socket = io();
     // user that is logged in
     var currentUser;

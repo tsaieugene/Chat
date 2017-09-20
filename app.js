@@ -18,6 +18,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://localhost/ChatApp', function(err) {
     if (err) {
