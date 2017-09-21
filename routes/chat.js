@@ -11,8 +11,7 @@ router.get('/:id', function(req, res, next) {
             .exec(function (err, docs) {
             if (err) {
                 res.status(500).json({error: 'Server error: Database search'});
-            }
-            if (docs != null) {
+            } else if (docs != null) {
                 res.json({fromUser: docs.fromUser, toUser: docs.toUser, text: docs.text, expirationDate: docs.expireAt});
             } else {
                 res.status(404).json({error: 'Message was not found. It may have expired. Try refreshing by clicking on the same user again.'});
